@@ -18,4 +18,9 @@ public class CreateFranchiseRequest {
     public String getName() {
         return name;
     }
+
+    // Jackson necesita setter (o constructor anotado) para deserializar el JSON del body.
+    public void setName(String name) {
+        this.name = name;
+    }
 }

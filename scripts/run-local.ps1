@@ -1,5 +1,5 @@
 # Carga variables desde .env en el proceso actual y ejecuta Spring Boot.
-# Uso (desde la raíz del repo):  pwsh -File scripts/run-local.ps1
+# Uso (desde la raíz del repo):  powershell -ExecutionPolicy Bypass -File .\scripts\run-local.ps1
 
 $ErrorActionPreference = "Stop"
 # Raíz del repo = carpeta padre de scripts/

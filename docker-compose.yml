@@ -1,4 +1,4 @@
-# MongoDB local: credenciales desde archivo .env (ver .env.example).
+# MongoDB local: variables en .env o valores por defecto (mismos que application.yaml / .env.example).
 services:
   mongo:
     image: mongo:7
@@ -7,9 +7,9 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-cambia_esto_en_local}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE:-franchise_db}
     volumes:
       - mongo_data:/data/db
 
