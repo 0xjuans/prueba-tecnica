@@ -1,4 +1,8 @@
 HELP.md
+
+# Variables de entorno locales (credenciales); no versionar.
+.env
+
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

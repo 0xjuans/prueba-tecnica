@@ -4,7 +4,8 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:admin123@localhost:27017/franchise_db?authSource=admin
+      # Definir MONGODB_URI en .env (copiar desde .env.example); no versionar secretos.
+      uri: ${MONGODB_URI}
 
 # Swagger configuration
 springdoc:
