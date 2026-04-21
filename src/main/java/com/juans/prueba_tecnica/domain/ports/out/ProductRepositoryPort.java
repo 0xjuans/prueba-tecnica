@@ -6,6 +6,8 @@ import reactor.core.publisher.Mono;
 
 // Puerto de salida para persistir productos de sucursal.
 public interface ProductRepositoryPort {
+    Flux<Product> findAll();
+
     Flux<Product> findByBranchId(String branchId);
 
     Mono<Product> findById(String id);

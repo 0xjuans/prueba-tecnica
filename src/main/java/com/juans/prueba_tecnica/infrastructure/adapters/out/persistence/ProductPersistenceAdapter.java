@@ -17,6 +17,13 @@ public class ProductPersistenceAdapter implements ProductRepositoryPort {
     }
 
     @Override
+    public Flux<Product> findAll() {
+        return productMongoRepository
+                .findAll()
+                .map(document -> new Product(document.getId(), document.getBranchId(), document.getName(), document.getStock()));
+    }
+
+    @Override
     public Flux<Product> findByBranchId(String branchId) {
         return productMongoRepository
                 .findByBranchId(branchId)
