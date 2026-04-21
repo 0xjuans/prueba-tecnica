@@ -6,6 +6,8 @@ import reactor.core.publisher.Mono;
 
 // Puerto de salida para persistir sucursales.
 public interface BranchRepositoryPort {
+    Flux<Branch> findAll();
+
     Flux<Branch> findByFranchiseId(String franchiseId);
 
     Mono<Branch> findById(String id);

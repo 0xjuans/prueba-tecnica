@@ -17,6 +17,13 @@ public class BranchPersistenceAdapter implements BranchRepositoryPort {
     }
 
     @Override
+    public Flux<Branch> findAll() {
+        return branchMongoRepository
+                .findAll()
+                .map(document -> new Branch(document.getId(), document.getFranchiseId(), document.getName()));
+    }
+
+    @Override
     public Flux<Branch> findByFranchiseId(String franchiseId) {
         return branchMongoRepository
                 .findByFranchiseId(franchiseId)
