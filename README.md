@@ -2,6 +2,26 @@
 
 API reactiva para gestionar franquicias, sucursales y productos con persistencia en MongoDB.
 
+## Cloud deployment
+
+- API URL: `https://prueba-tecnica-spoe.onrender.com`
+- Root: `https://prueba-tecnica-spoe.onrender.com/`
+- Swagger: `https://prueba-tecnica-spoe.onrender.com/swagger-ui.html`
+- OpenAPI: `https://prueba-tecnica-spoe.onrender.com/api-docs`
+
+Proveedor usado:
+
+- Render (API)
+- MongoDB Atlas M0 (persistencia)
+
+Variables requeridas:
+
+- `MONGODB_URI`
+
+Notas free tier:
+
+- Puede haber cold start despues de periodos de inactividad.
+
 ## Tecnologias
 
 - Java 17
@@ -57,6 +77,7 @@ mvn spring-boot:run
 La API queda disponible en:
 
 - `http://localhost:8080`
+- `http://localhost:8080/` (ruta raiz con enlaces utiles)
 
 ## Documentacion API (Swagger)
 
@@ -85,6 +106,10 @@ La API queda disponible en:
 - `GET /api/products` - Listar productos con sucursal asociada
 - `PATCH /api/products/{productId}/stock` - Actualizar stock de producto
 - `PATCH /api/products/{productId}/name` - Actualizar nombre de producto 
+
+### Root
+
+- `GET /` - Mensaje de estado y enlaces a Swagger/OpenAPI
 
 ## Persistencia e IaC (Terraform)
 
