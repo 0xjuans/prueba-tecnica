@@ -4,10 +4,8 @@ API reactiva para gestionar franquicias, sucursales y productos con persistencia
 
 ## Cloud deployment
 
-- API URL: `https://prueba-tecnica-spoe.onrender.com`
-- Root: `https://prueba-tecnica-spoe.onrender.com/`
-- Swagger: `https://prueba-tecnica-spoe.onrender.com/swagger-ui.html`
-- OpenAPI: `https://prueba-tecnica-spoe.onrender.com/api-docs`
+- API URL: [https://prueba-tecnica-spoe.onrender.com](https://prueba-tecnica-spoe.onrender.com)
+- Swagger: [https://prueba-tecnica-spoe.onrender.com/swagger-ui.html](https://prueba-tecnica-spoe.onrender.com/swagger-ui.html)
 
 Proveedor usado:
 
