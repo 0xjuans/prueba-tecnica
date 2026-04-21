@@ -45,4 +45,8 @@ public class Product {
     public Product withStock(int newStock) {
         return new Product(this.id, this.branchId, this.name, newStock);
     }
+
+    public Product withName(String newName) {
+        return new Product(this.id, this.branchId, newName, this.stock);
+    }
 }

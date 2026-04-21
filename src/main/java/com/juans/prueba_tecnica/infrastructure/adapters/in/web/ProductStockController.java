@@ -1,7 +1,9 @@
 package com.juans.prueba_tecnica.infrastructure.adapters.in.web;
 
+import com.juans.prueba_tecnica.domain.ports.in.UpdateProductNameUseCase;
 import com.juans.prueba_tecnica.domain.ports.in.UpdateProductStockUseCase;
 import com.juans.prueba_tecnica.infrastructure.adapters.in.web.dto.ProductResponse;
+import com.juans.prueba_tecnica.infrastructure.adapters.in.web.dto.UpdateProductNameRequest;
 import com.juans.prueba_tecnica.infrastructure.adapters.in.web.dto.UpdateStockRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -21,10 +23,25 @@ import reactor.core.publisher.Mono;
 @Tag(name = "Stock", description = "Actualización de stock de productos")
 public class ProductStockController {
 
+    private final UpdateProductNameUseCase updateProductNameUseCase;
     private final UpdateProductStockUseCase updateProductStockUseCase;
 
-    public ProductStockController(UpdateProductStockUseCase updateProductStockUseCase) {
+    public ProductStockController(
+            UpdateProductNameUseCase updateProductNameUseCase,
+            UpdateProductStockUseCase updateProductStockUseCase) {
+        this.updateProductNameUseCase = updateProductNameUseCase;
         this.updateProductStockUseCase = updateProductStockUseCase;
+    }
+
+    @PatchMapping("/{productId}/name")
+    @Operation(summary = "Actualizar nombre de producto", description = "Actualiza el nombre de un producto existente")
+    public Mono<ResponseEntity<ProductResponse>> updateName(
+            @Parameter(description = "Id del producto") @PathVariable String productId,
+            @Valid @RequestBody UpdateProductNameRequest request) {
+        return updateProductNameUseCase
+                .updateName(productId, request.getName())
+                .map(product -> ProductResponse.from(product.getId(), product.getBranchId(), product.getName(), product.getStock()))
+                .map(ResponseEntity::ok);
     }
 
     @PatchMapping("/{productId}/stock")
