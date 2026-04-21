@@ -35,4 +35,8 @@ public class Branch {
     public Branch withId(String newId) {
         return new Branch(newId, this.franchiseId, this.name);
     }
+
+    public Branch withName(String newName) {
+        return new Branch(this.id, this.franchiseId, newName);
+    }
 }
