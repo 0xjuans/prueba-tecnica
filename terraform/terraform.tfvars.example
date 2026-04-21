@@ -1,0 +1,15 @@
+# Copia este archivo a terraform.tfvars y completa los valores reales.
+atlas_public_key   = "<ATLAS_PUBLIC_KEY>"
+atlas_private_key  = "<ATLAS_PRIVATE_KEY>"
+atlas_org_id       = "<ATLAS_ORG_ID>"
+
+atlas_project_name = "prueba-tecnica-backend"
+atlas_cluster_name = "prueba-tecnica-cluster"
+atlas_region       = "US_EAST_1"
+atlas_instance_size = "M10"
+
+allowed_cidr = "0.0.0.0/0"
+
+db_username = "app_user"
+db_password = "<DB_PASSWORD>"
+db_name     = "franchise_db"

@@ -3,6 +3,18 @@ HELP.md
 # Variables de entorno locales (credenciales); no versionar.
 .env
 
+# Terraform local state/artifacts
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
