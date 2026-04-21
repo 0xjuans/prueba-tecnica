@@ -29,4 +29,8 @@ public class Franchise {
     public Franchise withId(String newId) {
         return new Franchise(newId, this.name);
     }
+
+    public Franchise withName(String newName) {
+        return new Franchise(this.id, newName);
+    }
 }
