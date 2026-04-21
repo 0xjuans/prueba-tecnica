@@ -56,7 +56,6 @@ cp .env.example .env
 
 2. Ajusta valores en `.env` (usuario/password Mongo y `MONGODB_URI`).
 
-> Nota: `.env` no se sube al repositorio.
 
 ## Ejecucion local
 
